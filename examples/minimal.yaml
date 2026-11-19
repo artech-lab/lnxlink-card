@@ -1,0 +1,3 @@
+# Minimal configuration: the card finds the LNXlink computer and all of its
+# entities by itself.
+type: custom:lnxlink-card

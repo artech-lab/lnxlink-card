@@ -1,0 +1,34 @@
+{
+  "name": "lnxlink-card",
+  "version": "1.0.0",
+  "description": "Home Assistant dashboard card for Linux computers monitored with LNXlink: status, CPU and RAM charts, storage, network, updates and power buttons.",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/artech-lab/lnxlink-card",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artech-lab/lnxlink-card.git"
+  },
+  "keywords": [
+    "home-assistant",
+    "hacs",
+    "lovelace",
+    "custom-card",
+    "lnxlink",
+    "linux",
+    "system-monitor"
+  ],
+  "scripts": {
+    "check": "node --check dist/lnxlink-card.js",
+    "test": "node --test tests/card.test.mjs",
+    "test:e2e": "node tests/e2e.mjs",
+    "screenshots": "node scripts/screenshots.cjs"
+  },
+  "devDependencies": {
+    "@mdi/js": "^7.4.47",
+    "playwright": "^1.50.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,38 @@
+# Every option. All of them are optional: entities are found automatically
+# and need to be set only to override the discovery.
+type: custom:lnxlink-card
+device: 0123456789abcdef0123456789abcdef   # default: the first LNXlink computer
+name: Workstation                          # default: device name
+subtitle: Ubuntu 24.04 LTS                 # default: operating system of the device
+icon: mdi:laptop
+hours_to_show: 3                           # 1-48
+show_charts: true
+show_storage: true
+show_details: true
+show_actions: true
+confirm_actions: true
+status_entity: binary_sensor.workstation_lwt
+cpu_entity: sensor.workstation_cpu_usage
+memory_entity: sensor.workstation_memory_usage
+temperature_entity: sensor.workstation_temperature_coretemp_package_id_0
+disk_entities:
+  - sensor.workstation_disk_dev_nvme0n1p2
+  - sensor.workstation_disk_dev_nvme0n1p1
+wifi_entity: sensor.workstation_wifi
+download_entity: sensor.workstation_network_download
+upload_entity: sensor.workstation_network_upload
+users_entity: sensor.workstation_current_users
+ip_entity: sensor.workstation_interface_wlp2s0
+uptime_entity: sensor.workstation_boot_time
+updates_count_entity: sensor.workstation_system_updates_count
+system_updates_entity: binary_sensor.workstation_system_updates
+restart_required_entity: binary_sensor.workstation_required_restart
+update_entity: update.workstation_update
+suspend_entity: button.workstation_suspend
+restart_entity: button.workstation_restart
+shutdown_entity: button.workstation_shutdown
+# Optional: show the card only while the computer is on
+visibility:
+  - condition: state
+    entity: binary_sensor.workstation_lwt
+    state: "on"
